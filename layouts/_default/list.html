@@ -5,8 +5,7 @@
 <header class="page-header"><h1>{{ .Title }}</h1></header>{{ $scope = . }}
 {{ end }}
 
-{{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
-{{- $paginator := .Paginate $pages }}
+{{- $paginator := .Paginate (where $scope.RegularPages ".Params.type" "!=" "page") }}
 
 {{- range $index, $page := $paginator.Pages }}
 
