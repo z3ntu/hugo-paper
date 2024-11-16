@@ -14,7 +14,7 @@
     <meta name="description" content="{{ .Site.Params.description }}">
     <meta name="author" content="{{ .Site.Author.name }}">
     {{- end }}
-    {{ with .Site.Social.mastodon }}
+    {{ with .Site.Params.social.mastodon }}
     <link href="{{ . }}" rel="me">
     {{ end }}
     <!-- Styles -->
