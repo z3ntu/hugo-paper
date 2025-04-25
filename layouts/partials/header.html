@@ -10,6 +10,9 @@
     {{- if eq .Kind "page" }}
     <meta name="description" content="{{ .Summary }}">
     <meta name="author" content="{{ .Params.Author | default .Site.Author.name }}">
+    {{ with .Site.Params.social.mastodon_handle }}
+    <meta name="fediverse:creator" content="{{ . }}">
+    {{ end }}
     {{- else }}
     <meta name="description" content="{{ .Site.Params.description }}">
     <meta name="author" content="{{ .Site.Author.name }}">
