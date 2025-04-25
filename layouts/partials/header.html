@@ -9,13 +9,13 @@
     <!-- Meta -->
     {{- if eq .Kind "page" }}
     <meta name="description" content="{{ .Summary }}">
-    <meta name="author" content="{{ .Params.Author | default .Site.Author.name }}">
+    <meta name="author" content="{{ .Params.Author | default .Site.Params.author }}">
     {{ with .Site.Params.social.mastodon_handle }}
     <meta name="fediverse:creator" content="{{ . }}">
     {{ end }}
     {{- else }}
     <meta name="description" content="{{ .Site.Params.description }}">
-    <meta name="author" content="{{ .Site.Author.name }}">
+    <meta name="author" content="{{ .Site.Params.author }}">
     {{- end }}
     {{ with .Site.Params.social.mastodon }}
     <link href="{{ . }}" rel="me">
